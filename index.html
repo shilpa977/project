@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Movie Recommendation App</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>Movie Recommender 🎬</h1>
+    <div class="controls">
+      <input id="searchInput" type="search" placeholder="Search movie title..." />
+      <select id="genreSelect">
+        <option value="all">All genres</option>
+      </select>
+      <button id="recommendTopBtn">Top Picks</button>
+      <button id="recommendRandomBtn">Surprise Me</button>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="movies-grid" id="moviesGrid" aria-live="polite"></section>
+
+    <aside class="sidebar">
+      <h2>Favorites ❤️</h2>
+      <ul id="favoritesList" class="favorites-list"></ul>
+      <hr/>
+      <h3>Add sample movie</h3>
+      <form id="addMovieForm" class="add-movie-form">
+        <input name="title" placeholder="Title" required/>
+        <input name="year" placeholder="Year" type="number"/>
+        <input name="genre" placeholder="Genre" required/>
+        <input name="rating" placeholder="Rating (0-10)" type="number" min="0" max="10" step="0.1" required/>
+        <button type="submit">Add</button>
+      </form>
+    </aside>
+  </main>
+
+  <!-- Modal for details -->
+  <div id="detailsModal" class="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true">
+      <button class="modal-close" id="modalCloseBtn" title="Close">✕</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <small>Built with ♥ — demo app</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
